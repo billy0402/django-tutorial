@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'graphene_django',
 
     'polls.apps.PollsConfig',
     'snippets.apps.SnippetsConfig',
+    'ingredients.apps.IngredientsConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +131,10 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+}
+
+
+# Graphene Django
+GRAPHENE = {
+    'SCHEMA': 'core.schema.schema',
 }

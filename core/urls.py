@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.decorators.csrf import csrf_exempt
+from graphene_django.views import GraphQLView
 from rest_framework.routers import DefaultRouter
 
 from snippets import views as snippet_views
@@ -30,5 +32,6 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
+    path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('admin/', admin.site.urls),
 ]
