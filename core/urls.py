@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from snippets import views as snippet_views
+
 urlpatterns = [
     path('polls/', include('polls.urls')),
+    path('api/', snippet_views.api_root),
     path('snippets/', include('snippets.urls')),
     path('users/', include('users.urls')),
     path('api-auth/', include('rest_framework.urls')),
