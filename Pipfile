@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 pygments = "*"
 graphene_django = "*"
+django-filter = "*"
 
 [dev-packages]
 
